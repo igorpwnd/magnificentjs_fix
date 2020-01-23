@@ -1,5 +1,5 @@
 (function (root, factory) {
-  'use strict'; // eslint-disable-line semi
+  'use strict';
 
   var name = 'MagnificentAnalytics'
   if (typeof define === 'function' && define.amd) {
@@ -12,9 +12,9 @@
     root[name] = factory(root, false, root.gaTrack)
   }
 }(this, function (root, detectNode, gaTrack) {
-  'use strict'; // eslint-disable-line semi
+  'use strict';
 
-  var MagnificentAnalytics = function () {}
+  var MagnificentAnalytics = function () { }
 
   var options = root.MAGNIFICENT_OPTIONS || {}
 
@@ -32,4 +32,4 @@
   }
 
   return MagnificentAnalytics
-}))
+}));

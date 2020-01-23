@@ -1,5 +1,5 @@
 (function (root, factory) {
-  'use strict'; // eslint-disable-line semi
+  'use strict';
 
   var name = 'MagnificentControl'
   if (typeof define === 'function' && define.amd) {
@@ -12,7 +12,7 @@
     root[name] = factory(root.jQuery, root.MagnificentAnalytic, root.screenfull)
   }
 }(this, function ($, MagnificentAnalytics, screenfull) {
-  'use strict'; // eslint-disable-line semi
+  'use strict';
 
   var MagnificentControl = function (element, options) {
     this.element = $(element)
@@ -31,44 +31,44 @@
     var magInst = this.magInst
 
     $el.find('[mag-ctrl-zoom-by], [data-mag-ctrl-zoom-by]')
-    .on('click', function () {
-      var attr = $(this).attr('mag-ctrl-zoom-by') || $(this).attr('data-mag-ctrl-zoom-by')
-      var zoomBy = $.parseJSON(attr)
-      magInst.zoomBy(zoomBy)
-    })
+      .on('click', function () {
+        var attr = $(this).attr('mag-ctrl-zoom-by') || $(this).attr('data-mag-ctrl-zoom-by')
+        var zoomBy = $.parseJSON(attr)
+        magInst.zoomBy(zoomBy)
+      })
 
     $el.find('[mag-ctrl-move-by-x], [mag-ctrl-move-by-y], [data-mag-ctrl-move-by-x], [data-mag-ctrl-move-by-y]')
-    .on('click', function () {
-      var attr = $(this).attr('mag-ctrl-move-by-x') || $(this).attr('data-mag-ctrl-move-by-x')
-      var x = attr
-      if (x) {
-        x = $.parseJSON(x)
-      }
-      attr = $(this).attr('mag-ctrl-move-by-y') || $(this).attr('data-mag-ctrl-move-by-y')
-      var y = attr
-      if (y) {
-        y = $.parseJSON(y)
-      }
-      var moveBy = {
-        x: x,
-        y: y
-      }
-      magInst.moveBy(moveBy)
-    })
+      .on('click', function () {
+        var attr = $(this).attr('mag-ctrl-move-by-x') || $(this).attr('data-mag-ctrl-move-by-x')
+        var x = attr
+        if (x) {
+          x = $.parseJSON(x)
+        }
+        attr = $(this).attr('mag-ctrl-move-by-y') || $(this).attr('data-mag-ctrl-move-by-y')
+        var y = attr
+        if (y) {
+          y = $.parseJSON(y)
+        }
+        var moveBy = {
+          x: x,
+          y: y
+        }
+        magInst.moveBy(moveBy)
+      })
 
     $el.find('[mag-ctrl-fullscreen], [data-mag-ctrl-fullscreen]')
-    .on('click', function () {
-      if (screenfull) {
-        if (screenfull.enabled) {
-          screenfull.request(mag)
+      .on('click', function () {
+        if (screenfull) {
+          if (screenfull.enabled) {
+            screenfull.request(mag)
+          }
         }
-      }
-    })
+      })
 
     $el.find('[mag-ctrl-destroy], [data-mag-ctrl-destroy]')
-    .on('click', function () {
-      magInst.destroy()
-    })
+      .on('click', function () {
+        magInst.destroy()
+      })
   }
 
   $.bridget('magCtrl', MagnificentControl)
@@ -78,4 +78,4 @@
   }
 
   return MagnificentControl
-}))
+}));

@@ -1,9 +1,5 @@
-/**
- * mag
- */
-
 (function (root, factory) {
-  'use strict'; // eslint-disable-line semi
+  'use strict';
 
   var name = 'Mag'
   if (typeof define === 'function' && define.amd) {
@@ -16,7 +12,7 @@
     root[name] = factory(root.MagnificentAnalytics)
   }
 }(this, function (MagnificentAnalytics) {
-  'use strict'; // eslint-disable-line semi
+  'use strict';
 
   /**
    * @typedef {Object} MagModelFocus
@@ -244,4 +240,4 @@
   }
 
   return Mag
-}))
+}));

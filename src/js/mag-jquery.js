@@ -1,19 +1,5 @@
-/**
- * mag-jquery
- */
-
-/**
- * @external jQuery
- * @see {@link https://api.jquery.com/jQuery/}
- */
-
-/**
- * @external HTMLElement
- * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement}
- */
-
 (function (root, factory) {
-  'use strict'; // eslint-disable-line semi
+  'use strict';
 
   var name = 'Magnificent'
   if (typeof define === 'function' && define.amd) {
@@ -33,7 +19,7 @@
     )
   }
 }(this, function (Mag, MagnificentAnalytics, $, Hammer, PreventGhostClick) {
-  'use strict'; // eslint-disable-line semi
+  'use strict';
 
   $(':root').addClass('mag-js')
 
@@ -927,4 +913,4 @@
   }
 
   return Magnificent
-}))
+}));
